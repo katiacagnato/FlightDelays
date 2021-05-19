@@ -1,9 +1,9 @@
 package it.polito.tdp.extflightdelays;
 
-import javafx.application.Application;
 import static javafx.application.Application.launch;
 
 import it.polito.tdp.extflightdelays.model.Model;
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

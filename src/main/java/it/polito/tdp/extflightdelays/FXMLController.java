@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.extflightdelays.model.Model;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,7 +14,7 @@ import javafx.scene.control.TextField;
 
 public class FXMLController {
 	
-	private Model model;
+	 Model model;
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -41,6 +42,17 @@ public class FXMLController {
 
     @FXML
     void doAnalizzaAeroporti(ActionEvent event) {
+    	
+    	txtResult.clear();
+    	int compagnieMinime;
+    	
+    	try { 
+    		int numero= Integer.parseInt(compagnieMinimo.getText());
+    		model.CreaGrafo(numero);
+    		txtResult.setText("VERTICI: " + model.getNVertici()+'\n'+ "ARCHI: "+model.getNArchi());
+    	}catch(Exception e) {
+    		txtResult.setText("Inserire un numero");
+    	} 	
 
     }
 
